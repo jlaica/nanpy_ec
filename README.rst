@@ -3,14 +3,17 @@ Nanpy
 
 |Travis| |Latest Version| |Supported Python versions| |Downloads|
 
-Use your Arduino board with Python. http://pypi.python.org/pypi/nanpy
+Programa la tarjeta Arduino Uno con Python. http://pypi.python.org/pypi/nanpy
+
 
 Overview
 --------
+Nanpy es una biblioteca que usa nuestra tarjeta arduino como esclavo y es controlado por un dispositivo maestro como una PC , una Raspberry , etc. donde ejecutamos nuestros scripts.
 
-Nanpy is a library that use your Arduino as a slave, controlled by a master device where you run your scripts, such as a PC, a Raspberry Pi etc.
+Nanpy ayuda a los programadores habituados a la programación de tarjetas arduino y de c++ a una introducción e implementación rápida y sencilla a la sintaxis de python usando los mismos circuitos que ya tenemos contruidos sin necesidad de modificar nada. 
 
-The main purpose of Nanpy is making programmers' life easier, providing them a powerful library to create prototypes faster and make Arduino programming a game for kids.
+Manejando pines I/O
+~~~~~~~~~~~~~~~~~~~~
 
 ::
 
@@ -20,13 +23,9 @@ The main purpose of Nanpy is making programmers' life easier, providing them a p
     a.pinMode(13, a.OUTPUT)
     a.digitalWrite(13, a.HIGH)
 
-I know, there are a lot of projects able to do that, but hey, Nanpy can do more!
+Nanpy es fácilmente extensible y teóricamente puede usar todas las bibliotecas, permitiéndole crear cuantos objetos desee. Soportamos OneWire, Lcd, Stepper, Servo, DallasTemperature y muchos más...
 
-Nanpy is easily extensible and can theoretically use every library,
-allowing you to create how many objects you want. We support OneWire, Lcd, Stepper, Servo, DallasTemperature and many
-more...
-
-Let's try to connect our 16x2 lcd screen on pins 7, 8, 9, 10, 11, 12 and show your first "Hello world"!
+¡Intentemos probar nuestra pantalla LCD de 16x2 en los pines 7, 8, 9, 10, 11, 12 y mostrar su primer "Hola mundo"!
 
 ::
 
@@ -35,20 +34,19 @@ Let's try to connect our 16x2 lcd screen on pins 7, 8, 9, 10, 11, 12 and show yo
     lcd = Lcd([7, 8, 9, 10, 11, 12], [16, 2])
     lcd.printString('Hello World!')
 
-really straightforward now, isn't it? :)
+Esto es realmente sencillo. 
 
 Serial communication
 ~~~~~~~~~~~~~~~~~~~~
 
-Nanpy autodetects the serial port for you, anyway you can manually
-specify another serial port:
+Nanpy puede detectar automáticamente el puerto serie en el cual se encuentra conectado nuestra tarjeta ó puede especificar el puerto serie que estamos usando:
 
 ::
 
     from nanpy import SerialManager
     connection = SerialManager(device='/dev/ttyACM1')
 
-and use it with your objects
+y úsalo con tus objetos
 
 ::
 
@@ -57,8 +55,7 @@ and use it with your objects
     a.pinMode(13, a.OUTPUT)
     a.digitalWrite(13, a.HIGH)
 
-You can specify how many SerialManager objects you want and control more
-than one Arduino board within the same script.
+Puede especificar cuántos objetos SerialManager desea y controlar más que una placa Arduino dentro del mismo script.
 
 How to build and install
 ------------------------
