@@ -10,7 +10,7 @@ Overview
 --------
 Nanpy es una biblioteca que usa nuestra tarjeta arduino como esclavo y es controlado por un dispositivo maestro como una PC , una Raspberry , etc. donde ejecutamos nuestros scripts.
 
-Nanpy ayuda a los programadores habituados a la programación de tarjetas arduino y de c++ a una introducción e implementación rápida y sencilla a la sintaxis de python usando los mismos circuitos que ya tenemos contruidos sin necesidad de modificar nada. 
+Nanpy ayuda a los programadores habituados a la programación de tarjetas arduino y de c++ a una introducción e implementación rápida y sencilla a la sintaxis de python usando los mismos circuitos que ya tenemos construidos sin necesidad de modificar nada en ellos. 
 
 Manejando pines I/O
 ~~~~~~~~~~~~~~~~~~~~
@@ -57,12 +57,11 @@ y úsalo con tus objetos
 
 Puede especificar cuántos objetos SerialManager desea y controlar más que una placa Arduino dentro del mismo script.
 
-How to build and install
-------------------------
+Construir firmware e instalar
+-----------------------------
 
-First of all, you need to build the firmware and upload it on your
-Arduino, to do that clone the `nanpy-firmware repository on
-Github <https://github.com/nanpy/firmware>`__ or `download it from
+En primer lugar, debe compilar el firmware y cargarlo en su
+arduino, para hacer eso debemos clonar el repositorio 'nanpy-firmware' dedse Github <https://github.com/nanpy/firmware>`__ o puede descargarlo desde
 PyPi <https://pypi.python.org/pypi/nanpy>`__.
 
 ::
@@ -74,6 +73,9 @@ PyPi <https://pypi.python.org/pypi/nanpy>`__.
 | You can now edit Nanpy/cfg.h generated file to configure your Nanpy
   firmware, selecting the features you want to include and the baud
   rate.
+ 
+| Ahora necesitamos editar el archivo Nanpy/cfg.h para configurar el firmware Nanpy, seleccionando las características que desea incluir y la tasa de       baudios.
+  
 | To build and install Nanpy firmware, copy Nanpy directory under your
   "sketchbook" directory, start your Arduino IDE, open Sketchbook ->
   Nanpy and click on "Upload".
